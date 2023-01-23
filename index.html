@@ -478,7 +478,7 @@ opacity: 0;
 /* Skills Section
 ********************************************************************* */
 #skills {
-	padding: 100px 0 100px 0;
+	
 	background-color: #F5F5F5;
 }
 .progressBar {
@@ -1317,6 +1317,202 @@ footer .social-icon li i:hover {
 .copyright {
     font-size: 18px;
 }
+    @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+:root {
+  
+  --transition-time: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Open Sans';
+  background: #fafafa;
+}
+
+
+
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 4rem;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.card {
+  font-family: 'Heebo';
+  --bg-filter-opacity: 0.5;
+  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  /*margin: 2em;*/
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em black;
+  transition: all, var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ccc;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: rotate(0);
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.card p {
+  font-size: 0.75em;
+  font-family: 'Open Sans';
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+.card .tags {
+  display: flex;
+}
+
+.card .tags .tag {
+  font-size: 0.75em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, var(--transition-time);
+}
+
+.card:hover .tags .tag {
+  background: var(--color);
+  color: white;
+}
+
+.card .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 1em;
+  line-height: 1em;
+  opacity: .8;
+}
+
+.card:before, .card:after {
+  content: '';
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: -5;
+  transition: all, var(--transition-time);
+  transition-timing-function: ease-in-out;
+}
+
+.card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.card:after {
+   background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(175,26,26,1) 45%, rgba(0,212,255,1) 100%);
+
+  width: 200%;
+  height: 200%;
+}
+
+.card:hover {
+  color: white;
+}
+
+.card:hover:before, .card:hover:after {
+  transform: scale(1);
+}
+
+.card-grid-space .num {
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  margin-left: 1rem;
+}
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+}
+
+.info img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .card-grid-space .num {
+    /margin-left: 0;
+    /text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+}
 </style>
 </head>
 <body>
@@ -1340,10 +1536,11 @@ footer .social-icon li i:hover {
     </div>
   </div>
   <div class="title">
-    <div><span class="typcn typcn-heart-outline icon heading"></span></div>
+    <div><span class="typcn typcn-heart-outline icon heading"><img style="width: 270px; height: auto; "src="https://drive.google.com/uc?export=view&id=1kSxwu0QXnKcndRW2NH-PG7dyQeMNzvY8">
+    <br></span></div>
     <div class="smallsep heading"></div>
     <h1 class="heading"> One Roof Cleaning</h1>
-    <h2 class="heading">Everything under one roof</h2>
+    <h2 class="heading">REFERRED FOR A REASON</h2>
     <a class="smoothscroll" href="#about">
     <div class="mouse">
       <div class="wheel"></div>
@@ -1429,117 +1626,74 @@ One Roof Building Maintenance Inc is set goal to satisfy our customer 100 percen
 
 <section id="skills">
   <div class="container">
-    <h1>Services</h1>
-    <div class="block"></div>
-    <div class="viewport">
-   
- <div class="cards">
-  
-   <div class="card">
-     <div class="card_img card1">
-          <div class="plus"><p>+</p></div>
-     </div>
-     <h3>Commercial / Office Cleaning Services</h3>
-     <div class="line">
-     </div>
-     
-     <p><br></p>
+      <h1><BR>Services</h1>
     
-   </div>
-   <div class="card">
-     <div class="card_img card2">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>Building Maintenance/ Janitorial Services</h3>
-     <div class="line">
-     </div>
-   <p><br></p>
-   </div>
-   <div class="card">
-     <div class="card_img card3">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>Carpet Cleaning Services</h3>
-     <div class="line">
-     </div>
-     <p><br></p>
-   </div>
-   <div class="card">
-     <div class="card_img card4">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>Restaurant Cleaning Services</h3>
-     <div class="line">
-     </div>
-     <p><br></p></div>
-   <div class="card">
-     <div class="card_img card5">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>School Janitorial Services</h3>
-     <div class="line">
-     </div>
-   <p><br></p>
-   </div>
-   <div class="card">
-     <div class="card_img card6">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>Hotel Cleaning Services</h3>
-     <div class="line">
-     </div>
-   <p><br></p>
-   </div>
-</div>
-</div>
- 
-   <!--  <div class="row">
-      <div class="one-third column">
-        <h3>Design</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi amet nobis repellat natus.</p>
+
+<section class="cards-wrapper">
+  <div class="card-grid-space">
+    
+    <a class="card"  style="--bg-img: url(https://www.interplaylearning.com/wp-content/uploads/2022/05/building-maintenance-everything-social.jpg)">
+      <div>
+        <h1 style="padding-top: 150px;color: white;">Building Maintenance/ Janitorial Services</h1>
+       
       </div>
-      <div class="one-third column">
-        <h3>Development</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi amet nobis repellat natus.</p>
+    </a>
+  </div>
+  <div class="card-grid-space">
+    
+    <a class="card" style="--bg-img: url(https://www.rbcclean.com/wp-content/uploads/2020/08/shutterstock_125068052-scaled.jpg)">
+      <div>
+        <h1 style="padding-top: 150px;color: white;">Commercial / Office Cleaning Services</h1>
+        
       </div>
-      <div class="one-third column">
-        <h3>Marketing</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi amet nobis repellat natus.</p>
+    </a>
+  </div>
+      <div class="card-grid-space">
+    
+    <a class="card" style="--bg-img: url(https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2022/03/Carpet-Cleaning-Cost.jpg)">
+      <div>
+        <h1 style="padding-top: 150px;color: white;">Carpet Cleaning Services</h1>
+        
       </div>
+    </a>
+  </div>
+      <div class="card-grid-space">
+    
+    <a class="card" style="--bg-img: url(https://modernrestaurantmanagement.com/assets/media/2021/09/Getty_1253934822-2-1200x655.jpg)">
+      <div>
+        <h1 style="padding-top: 150px;color: white;">Restaurant Cleaning Services</h1>
+        
+      </div>
+    </a>
+  </div>
+      <div class="card-grid-space">
+    
+    <a class="card" style="--bg-img: url(https://www.thepackagingcompany.us/knowledge-sharing/wp-content/uploads/sites/2/2020/10/5-Items-Your-Janitor-Needs-for-Easy-Maintenance-1080x675.jpg)">
+      <div>
+        <h1 style="padding-top: 150px;color: white;">School Janitorial Services</h1>
+        
+      </div>
+    </a>
+  </div>
+      <div class="card-grid-space">
+    
+    <a class="card" style="--bg-img: url(https://www.cleanlink.com/resources/editorial/2019/hotel-maid-24086.jpg)">
+      <div>
+        <h1 style="padding-top: 150px;color: white;">Hotel Cleaning Services</h1>
+        
+      </div>
+    </a>
+  </div>
+      
+  
+  <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+</section>    
+    
+    
+    
+    
     </div>
-    <div class="row">
-      <div class="eight columns">
-        <div class="progressBar">
-          <h4>HTML5</h4>
-          <div class="progressBarContainer">
-            <div class="progressBarValue value-90"></div>
-          </div>
-        </div>
-        <div class="progressBar">
-          <h4>CSS3</h4>
-          <div class="progressBarContainer">
-            <div class="progressBarValue value-80"></div>
-          </div>
-        </div>
-        <div class="progressBar">
-          <h4>Jquery</h4>
-          <div class="progressBarContainer">
-            <div class="progressBarValue value-30"></div>
-          </div>
-        </div>
-        <div class="progressBar">
-          <h4>WordPress</h4>
-          <div class="progressBarContainer">
-            <div class="progressBarValue value-70"></div>
-          </div>
-        </div>
-      </div>
-      <div class="four columns">
-        <p>Lorem ipsum dolor sit amet, enim soluta consectetur adipisicing elit. Sit, eius, itaque, porro, beatae impedit officia tenetur reiciendis in quia eum autem. Enim soluta consectetur adipisicing elit.</p>
-      </div>
-    </div>
-  </div>-->
-</section>  
+    
 
 <!-- Portfolio Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->  
